@@ -1,0 +1,3 @@
+<?php
+echo "<h3>WITAJ NA STRONIE Z GRAMI MATEMATYCZNYMI</h3>"
+?>

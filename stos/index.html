@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+<input type="text" id="liczba" /><br />
+<input type="button" value="Dodaj na stos" onclick="dodaj();" /><br />
+<input type="button" value="Zdejmij na stosu" onclick="zdejmij();" /><br />
+<script>
+var i;
+var stos = new Array();
+var n = 11;
+
+initialize();
+
+function initialize()
+{
+	i = 0;
+	var j;
+	for(j=0;j<n;j++)
+	{
+		stos[j] = null;
+	}
+}
+function push(element)
+{
+	i++;
+	stos[i] = element;
+}
+function pop()
+{
+	var k = stos[i];
+	i--;
+	return k;
+}
+function full()
+{
+	if(i>=(n-1))return true;
+	else return false;
+}
+function empty()
+{
+	if(i==0)return true;
+	else return false;
+}
+function dodaj()
+{
+	var liczba = parseInt(document.getElementById("liczba").value);
+	if(!full())push(liczba);
+	else alert("STOS JEST PEŁNY");
+}
+</script>
+</body>
+</html>
